@@ -1,5 +1,10 @@
 
 ### CHANGELOG
 
+30 Aug 2022:
+- Profile View header complete
+- Profile View bio complete
+- Profile View tab switcher complete 
+
 12 Aug 2022:
 - Initial commit
