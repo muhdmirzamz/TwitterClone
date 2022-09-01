@@ -20,6 +20,8 @@ struct ProfileInfoView: View {
             .padding(.bottom, 20)
             
             Text("Frontend software engineeer dabbling with iOS on the side. Exploring design with @fof_singapore and building communities @msociety_dev")
+                .lineLimit(nil)
+                .frame(height: 100)
                 .foregroundColor(Color.white)
             
             HStack {

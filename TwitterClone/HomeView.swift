@@ -8,17 +8,31 @@
 import SwiftUI
 
 struct HomeView: View {
+    
+    init() {
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
+    }
+    
     var body: some View {
+        
         NavigationView {
-            VStack {
-                HStack {
-                    Text("Home")
-                    Spacer()
+            ZStack {
+                VStack {
+                    ScrollView {
+                        ForEach(0..<20) { tweet in
+                            TweetView()
+                                .padding(.leading, 5)
+                                .padding()
+                        }
+                    }
                 }
-                
-                Spacer()
+                .navigationTitle("Twitter")
+                .navigationBarTitleDisplayMode(.inline)
+                .background(Color.init(red: 0/255, green: 26/255, blue: 51/255))
+
             }
             .background(Color.init(red: 0/255, green: 26/255, blue: 51/255))
+            
         }
     }
 }

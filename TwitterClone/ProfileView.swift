@@ -12,10 +12,16 @@ struct ProfileView: View {
         NavigationView {
             VStack {
                 HeaderView()
-                    .ignoresSafeArea(edges: .top).offset(y: -180)
-                
+                    .ignoresSafeArea(edges: .top)
+                    .offset(y: -100)
+                    .padding(.bottom, -100)
+                    
+
                 HStack {
-                    Image("icybay").resizable().frame(width: 100, height: 100).clipShape(Circle())
+                    Image("icybay")
+                        .resizable()
+                        .frame(width: 100, height: 100)
+                        .clipShape(Circle())
 
                     Spacer()
 
@@ -35,17 +41,29 @@ struct ProfileView: View {
 
                 }
                 .padding()
-                .offset(y: -230)
+                .offset(y: -50)
+                .padding(.bottom, -50)
+//                .background(Color.red)
 
                 ProfileInfoView()
-                    .offset(y: -260)
+                    .offset(y: -30)
+                    .padding(.bottom, -30)
+//                    .background(Color.red)
 
                 ProfileTabView()
-                    .offset(y: -270)
+
+                ScrollView {
+                    ForEach(0..<20) { tweet in
+                        TweetView()
+                            .padding(.leading, 5)
+                            .padding()
+                    }
+                }
                 
-                Spacer()
+//                Spacer()
             }
             .background(Color.init(red: 0/255, green: 26/255, blue: 51/255))
+            .navigationBarHidden(true)
         }
     }
 }
